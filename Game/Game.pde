@@ -9,8 +9,8 @@
 //------------------ GAME VARIABLES --------------------//
 
 //VARIABLES: Title Bar
-String titleText = "PeanutChessSkyHorse";
-String extraText = "CurrentLevel?";
+String titleText = "Final Destiny";
+String extraText = "The Last Saga?";
 
 //VARIABLES: Whole Game
 AnimatedSprite runningHorse;
@@ -22,30 +22,29 @@ PImage splashBg;
 String splashBgFile = "images/apcsa.png";
 //SoundFile song;
 
-//VARIABLES: Level1Grid Screen
-Grid level1Grid;
-PImage bg1;
-PImage bg2;
-PImage bg3;
+//VARIABLES: level1World Pixel-based Screen
+World level1World;
+PImage bg1a;
+PImage bg1b;
+PImage bg1c;
+Sprite knight; //Use Sprite for a pixel-based Location
+String knightFile = "sprites/knight.png";
+int knightstartX = 50;
+int knightstartY = 300;
 
-PImage level1Bg;
-String level1BgFile = "images/chess.jpg";
-PImage player1;   //Use PImage to display the image in a GridLocation
-String player1File = "images/x_wood.png";
-int player1Row = 3;
-int player1Col = 0;
+
+//VARIABLES: level2Grid Screen
+Grid level2Grid;
+
+PImage level2Bg;
+String level2BgFile = "images/chess.jpg";
+PImage knight2;   //Use PImage to display the image in a GridLocation
+String knight2File = "images/x_wood.png";
+int knight2Row = 3;
+int knight2Col = 0;
 int health = 3;
 AnimatedSprite walkingChick;
 Button b1 = new Button("rect", 650, 525, 100, 50, "GoToLevel2");
-
-//VARIABLES: Level2World Pixel-based Screen
-World level2World;
-PImage level2Bg;
-String level2BgFile = "images/sky.jpg";
-Sprite player2; //Use Sprite for a pixel-based Location
-String player2File = "images/zapdos.png";
-int player2startX = 50;
-int player2startY = 300;
 
 //VARIABLES: EndScreen
 World endScreen;
@@ -76,13 +75,9 @@ void setup() {
   //SETUP: Load BG images used in all screens
   splashBg = loadImage(splashBgFile);
   splashBg.resize(width, height);
-  level1Bg = loadImage(level1BgFile);
-  level1Bg.resize(width, height);
 
-  bg1 = loadImage("images/woods_Background1");
-  bg2 = loadImage("images/woods_Background2");
-  bg3 = loadImage("images/woods_Background3");
-
+  bg1a = loadImage("images/woods/background/woods_Background1.png");
+  bg1a.resize(width, height);
   level2Bg = loadImage(level2BgFile);
   level2Bg.resize(width, height);
   endBg = loadImage(endBgFile);
@@ -90,10 +85,9 @@ void setup() {
 
   //SETUP: Screens, Worlds, Grids
   splashScreen = new Screen("splash", splashBg);
-  level1Grid = new Grid("chessBoard", level1Bg, 6, 8);
-  //level1Grid.startPrintingGridMarks();
-  level2World = new World("sky", level2BgFile, 8.0, 0, 0); //moveable World constructor --> defines center & scale (x, scale, y)???
-  //level2World = new World("sky", level2Bg);   //non-moving World construtor
+  level1World = new World("woods", bg1a);
+  level2Grid = new Grid("basement", level2Bg, 6, 8);
+  //level2Grid.startPrintingGridMarks();
   endScreen = new World("end", endBg);
   currentScreen = splashScreen;
 
@@ -101,17 +95,25 @@ void setup() {
   runningHorse = new AnimatedSprite("sprites/horse_run.png", "sprites/horse_run.json", 50.0, 75.0, 10.0);
 
   //SETUP: Level 1
-  player1 = loadImage(player1File);
-  player1.resize(level1Grid.getTileWidth(),level1Grid.getTileHeight());
-  walkingChick = new AnimatedSprite("sprites/chick_walk.png", "sprites/chick_walk.json", 0.0, 0.0, 5.0);
-  level1Grid.setTileSprite(new GridLocation (5,5), walkingChick);
+    bg1b = loadImage("images/woods/background/woods_Background2.png");
+  bg1c= loadImage("images/woods/background/woods_Background3.png");
+bg1b.resize(width, height);
+bg1c.resize(width, height);
+  knight = new Sprite(knightFile, 1.0);
+  knight.moveTo(knightstartX, knightstartY);
+
+  //level1World.addSpriteCopyTo(runningHorse, 100, 200);  //example Sprite added to a World at a location, with a speed
+  level1World.printWorldSprites();
+
+
+   // knight.resize(level2Grid.getTileWidth(),level2Grid.getTileHeight());
+  //walkingChick = new AnimatedSprite("sprites/chick_walk.png", "sprites/chick_walk.json", 0.0, 0.0, 5.0);
+  //level2Grid.setTileSprite(new GridLocation (5,5), walkingChick);
   System.out.println("Done loading Level 1 ...");
   
   //SETUP: Level 2
-  player2 = new Sprite(player2File, 0.25);
-  //player2.moveTo(player2startX, player2startY);
-  level2World.addSpriteCopyTo(runningHorse, 100, 200);  //example Sprite added to a World at a location, with a speed
-  level2World.printWorldSprites();
+
+
   System.out.println("Done loading Level 2 ...");
   
   //SETUP: Sound
@@ -159,19 +161,19 @@ void keyPressed(){
   //What to do when a key is pressed?
   
   //KEYS FOR LEVEL1
-  if(currentScreen == level1Grid){
+  if(currentScreen == level2Grid){
 
-    //set [W] key to move the player1 up & avoid Out-of-Bounds errors
+    //set [W] key to move the knight2 up & avoid Out-of-Bounds errors
     if(keyCode == 87){
     
       //Store old GridLocation
-      GridLocation oldLoc = new GridLocation(player1Row, player1Col);
+      GridLocation oldLoc = new GridLocation(knight2Row, knight2Col);
       
       //Erase image from previous location
       
 
-      //change the field for player1Row
-      player1Row--;
+      //change the field for knight2Row
+      knight2Row--;
     }
 
 
@@ -181,9 +183,9 @@ void keyPressed(){
   //CHANGING SCREENS BASED ON KEYS
   //change to level1 if 1 key pressed, level2 if 2 key is pressed
   if(key == '1'){
-    currentScreen = level1Grid;
+    currentScreen = level2Grid;
   } else if(key == '2'){
-    currentScreen = level2World;
+    currentScreen = level1World;
   }
 
 
@@ -198,7 +200,7 @@ void mouseClicked(){
     System.out.println("Grid location: " + currentGrid.getGridLocation());
   }
 
-  //what to do if clicked? (Make player1 jump back?)
+  //what to do if clicked? (Make knight2 jump back?)
   
 
 
@@ -229,6 +231,9 @@ public void updateTitleBar(){
 
 //method to update what is drawn on the screen each frame
 public void updateScreen(){
+// background(bg1);
+// background(bg2);
+// background(bg3);
 
   //UPDATE: Background of the current Screen
   if(currentScreen.getBg() != null){
@@ -238,47 +243,56 @@ public void updateScreen(){
   //UPDATE: splashScreen
   if(currentScreen == splashScreen && splashScreen.getScreenTime() > 3000 && splashScreen.getScreenTime() < 5000){
     System.out.print("s");
-    currentScreen = level1Grid;
+    currentScreen = level1World;
   }
 
-  //UPDATE: level1Grid Screen
-  if(currentScreen == level1Grid){
-    System.out.print("1");
-    currentGrid = level1Grid;
 
-    //Display the Player1 image
-    GridLocation player1Loc = new GridLocation(player1Row,0);
-    level1Grid.setTileImage(player1Loc, player1);
+  //UPDATE: level1World Scren
+  if(currentScreen == level1World){
+    System.out.print("w");
+    currentWorld = level1World;
+    currentGrid = null;
+
+    
+    if(msElapsed%600==0){
+      image(bg1b, 0,0);
+    }
+    image(bg1c, 0,0);
+
+    
+    //level1World.moveBgXY(-3.0, 0);
+    //level1World.show();
+
+    knight.show();
+
+    level1World.showWorldSprites();
+
+  }
+
+
+  //UPDATE: level2Grid Screen
+  if(currentScreen == level2Grid){
+    System.out.print("b");
+    currentGrid = level2Grid;
+
+    //Display the knight2 image
+    GridLocation knight2Loc = new GridLocation(knight2Row,0);
+    level2Grid.setTileImage(knight2Loc, knight2);
     
     //update other screen elements
-    level1Grid.showGridImages();
-    level1Grid.showGridSprites();
-    level1Grid.showWorldSprites();
+    level2Grid.showGridImages();
+    level2Grid.showGridSprites();
+    level2Grid.showWorldSprites();
 
     //move to next level based on a button click
     b1.show();
     if(b1.isClicked()){
       System.out.println("\nButton Clicked");
-      currentScreen = level2World;
+      currentScreen = level1World;
     }
   
   }
   
-  //UPDATE: level2World Scren
-  if(currentScreen == level2World){
-    System.out.print("2");
-    currentWorld = level2World;
-    currentGrid = null;
-    
-    level2World.moveBgXY(-3.0, 0);
-    level2World.show();
-
-    player2.show();
-
-    level2World.showWorldSprites();
-
-  }
-
   //UPDATE: End Screen
   // if(currentScreen == endScreen){
 
@@ -317,13 +331,13 @@ public void moveSprites(){
 
       //Store the next GridLocation
 
-      //Check if the current tile has an image that is not player1      
+      //Check if the current tile has an image that is not knight2      
 
 
         //Get image/sprite from current location
           
 
-        //CASE 1: Collision with player1
+        //CASE 1: Collision with knight2
 
 
         //CASE 2: Move enemy over to new location
