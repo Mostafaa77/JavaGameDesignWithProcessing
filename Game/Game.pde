@@ -27,8 +27,8 @@ World level1World;
 PImage bg1a;
 PImage bg1b;
 PImage bg1c;
-Sprite knight; //Use Sprite for a pixel-based Location
-String knightFile = "sprites/knight.png";
+AnimatedSprite knight; //Use Sprite for a pixel-based Location
+//String knightFile = "sprites/knight.png";
 int knightstartX = 50;
 int knightstartY = 300;
 
@@ -99,8 +99,9 @@ void setup() {
   bg1c= loadImage("images/woods/background/woods_Background3.png");
 bg1b.resize(width, height);
 bg1c.resize(width, height);
-  knight = new Sprite(knightFile, 1.0);
-  knight.moveTo(knightstartX, knightstartY);
+  knight = new AnimatedSprite("sprites/knightRun.png", "sprites/knightRun.json", knightstartX, knightstartY, 0.0);
+  knight.resize(31*3,45*3);
+
 
   //level1World.addSpriteCopyTo(runningHorse, 100, 200);  //example Sprite added to a World at a location, with a speed
   level1World.printWorldSprites();
@@ -156,24 +157,17 @@ void draw() {
 void keyPressed(){
 
   //check what key was pressed
-  System.out.println("\nKey pressed: " + keyCode); //key gives you a character for the key pressed
+  System.out.println("\nKey pressed: " + key); //key gives you a character for the key pressed
 
   //What to do when a key is pressed?
   
   //KEYS FOR LEVEL1
-  if(currentScreen == level2Grid){
+  if(currentScreen == level1World){
 
     //set [W] key to move the knight2 up & avoid Out-of-Bounds errors
-    if(keyCode == 87){
-    
-      //Store old GridLocation
-      GridLocation oldLoc = new GridLocation(knight2Row, knight2Col);
-      
-      //Erase image from previous location
-      
-
-      //change the field for knight2Row
-      knight2Row--;
+    if(key == 'w'){
+      knight.setSpeed(5.0);
+      knight.move(0,-5);
     }
 
 
@@ -205,8 +199,8 @@ void mouseClicked(){
 
 
   //Toggle the animation on & off
-  doAnimation = !doAnimation;
-  System.out.println("doAnimation: " + doAnimation);
+  // doAnimation = !doAnimation;
+  // System.out.println("doAnimation: " + doAnimation);
   if(currentGrid != null){
     currentGrid.setMark("X",currentGrid.getGridLocation());
   }
@@ -263,7 +257,8 @@ public void updateScreen(){
     //level1World.moveBgXY(-3.0, 0);
     //level1World.show();
 
-    knight.show();
+    //knight.show();
+    knight.animate();
 
     level1World.showWorldSprites();
 
