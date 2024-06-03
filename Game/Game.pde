@@ -70,6 +70,10 @@ void setup() {
   imageMode(CORNER);    //Set Images to read coordinates at corners
   //fullScreen();   //only use if not using a specfic bg image
   
+  
+  //Setting up grid
+Gride grid = new Grid(100,100);
+
   //SETUP: Set the title on the title bar
   surface.setTitle(titleText);
 
