@@ -98,12 +98,12 @@ void setup() {
   currentScreen = splashScreen;
 
   //SETUP: All Game objects
-  runningHorse = new AnimatedSprite("sprites/horse_run.png", "sprites/horse_run.json", 50.0, 75.0, 10.0);
+  // runningHorse = new AnimatedSprite("sprites/horse_run.png", "sprites/horse_run.json", 50.0, 75.0, 10.0);
 
   //SETUP: Level 1
   player1 = loadImage(player1File);
   player1.resize(level1Grid.getTileWidth(),level1Grid.getTileHeight());
-  walkingChick = new AnimatedSprite("sprites/chick_walk.png", "sprites/chick_walk.json", 0.0, 0.0, 5.0);
+  // walkingChick = new AnimatedSprite("sprites/chick_walk.png", "sprites/chick_walk.json", 0.0, 0.0, 5.0);
   level1Grid.setTileSprite(new GridLocation (5,5), walkingChick);
   System.out.println("Done loading Level 1 ...");
   
@@ -229,6 +229,10 @@ public void updateTitleBar(){
 
 //method to update what is drawn on the screen each frame
 public void updateScreen(){
+//calling background
+background(bg1);
+background(bg2);
+background(bg3);
 
   //UPDATE: Background of the current Screen
   if(currentScreen.getBg() != null){
