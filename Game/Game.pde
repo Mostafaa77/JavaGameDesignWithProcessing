@@ -1,5 +1,5 @@
 /* Game Class Starter File
- * Authors: Joel A. Bianchi
+ * Authors: Christian A & Mostafa A
  * Last Edit: 5/29/2024
  * Modified for AnimatedSprites
  */
@@ -24,6 +24,10 @@ String splashBgFile = "images/apcsa.png";
 
 //VARIABLES: Level1Grid Screen
 Grid level1Grid;
+PImage bg1;
+PImage bg2;
+PImage bg3;
+
 PImage level1Bg;
 String level1BgFile = "images/chess.jpg";
 PImage player1;   //Use PImage to display the image in a GridLocation
@@ -74,6 +78,11 @@ void setup() {
   splashBg.resize(width, height);
   level1Bg = loadImage(level1BgFile);
   level1Bg.resize(width, height);
+
+  bg1 = loadImage("images/woods_Background1");
+  bg2 = loadImage("images/woods_Background2");
+  bg3 = loadImage("images/woods_Background3");
+
   level2Bg = loadImage(level2BgFile);
   level2Bg.resize(width, height);
   endBg = loadImage(endBgFile);
