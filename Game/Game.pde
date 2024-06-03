@@ -92,7 +92,7 @@ void setup() {
   currentScreen = splashScreen;
 
   //SETUP: All Game objects
-  runningHorse = new AnimatedSprite("sprites/horse_run.png", "sprites/horse_run.json", 50.0, 75.0, 10.0);
+  // runningHorse = new AnimatedSprite("sprites/horse_run.png", "sprites/horse_run.json", 50.0, 75.0, 10.0);
 
   //SETUP: Level 1
     bg1b = loadImage("images/woods/background/woods_Background2.png");
