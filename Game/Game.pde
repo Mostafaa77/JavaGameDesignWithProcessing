@@ -1,5 +1,5 @@
 /* Game Class Starter File
- * Authors: Christian A & Mostafa A
+ * Authors: Christian A & Mostafa Aboelfadl
  * Last Edit: 5/29/2024
  * Modified for AnimatedSprites
  */
