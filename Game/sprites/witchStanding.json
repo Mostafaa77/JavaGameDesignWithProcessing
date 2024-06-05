@@ -1,0 +1,240 @@
+{
+  "frames": [
+    {
+      "filename": "7.png",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 20,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 0,
+        "w": 20,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "1.png",
+      "frame": {
+        "x": 0,
+        "y": 32,
+        "w": 18,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 0,
+        "w": 18,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "4.png",
+      "frame": {
+        "x": 0,
+        "y": 64,
+        "w": 16,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 0,
+        "w": 16,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "6.png",
+      "frame": {
+        "x": 0,
+        "y": 96,
+        "w": 19,
+        "h": 29
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 3,
+        "w": 19,
+        "h": 29
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "0.png",
+      "frame": {
+        "x": 16,
+        "y": 64,
+        "w": 20,
+        "h": 28
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 4,
+        "w": 20,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "2.png",
+      "frame": {
+        "x": 18,
+        "y": 32,
+        "w": 20,
+        "h": 26
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 20,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "8.png",
+      "frame": {
+        "x": 36,
+        "y": 0,
+        "w": 20,
+        "h": 26
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 20,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "5.png",
+      "frame": {
+        "x": 38,
+        "y": 26,
+        "w": 19,
+        "h": 26
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 0,
+        "w": 19,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "3.png",
+      "frame": {
+        "x": 56,
+        "y": 0,
+        "w": 20,
+        "h": 25
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 7,
+        "w": 20,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "witchStanding.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 76,
+      "h": 125
+    },
+    "scale": 1
+  }
+}

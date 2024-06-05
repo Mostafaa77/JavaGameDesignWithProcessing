@@ -177,29 +177,28 @@ void keyPressed(){
 
     //set [W] key to move the knight2 up & avoid Out-of-Bounds errors
     if(key == 'w'){
-       knight.animate();
+     
       knight.setSpeed(5.0);
       knight.move(0,-5);
     }
  else if(key == 'd'){
-knightRun.animate();
+
   knight.setSpeed(5.0);
   knight.move(5,0);  
 }
 else if(key=='a'){
-knightRun.animate();
+
 knight.setSpeed(5.0);
 knight.move(-5,0);
 }
 else if(key=='s'){
- knight.animate();
 knight.setSpeed(5.0);
 knight.move(0,5);
 
-}
-else if(key == null){
-  Knight.animate();
-}
+// }
+// else if(key == null){
+//   Knight.animate();
+// }
 
   }
 
@@ -286,7 +285,7 @@ public void updateScreen(){
     //level1World.moveBgXY(-3.0, 0);
     //level1World.show();
 
-    //knight.show();
+    knight.animate();
    
 
     level1World.showWorldSprites();
