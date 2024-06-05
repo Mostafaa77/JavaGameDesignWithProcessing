@@ -120,10 +120,10 @@ bg1c.resize(width, height);
   knight = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", knightstartX, knightstartY, 0.0);
   knight.resize(128*2,64*2);
 //witch sprite
-witchStanding = new AnimatedSprite("sprites/witchStanding.png","sprites/witchStanding.json",witchstartX, witchstartY, 0.0 );
-  witchStanding.resize(31*2,45*2);
-  witch = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", witchstartX, witchstartY, 0.0);
-  witch.resize(128*2,64*2);
+witch = new AnimatedSprite("sprites/witch.png","sprites/witch.json",witchstartX, witchstartY, 0.0 );
+  // witchStanding.resize(31*2,45*2);
+  // witch = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", witchstartX, witchstartY, 0.0);
+  // witch.resize(128*2,64*2);
 
   //level1World.addSpriteCopyTo(runningHorse, 100, 200);  //example Sprite added to a World at a location, with a speed
   level1World.printWorldSprites();
@@ -301,6 +301,7 @@ public void updateScreen(){
     //level1World.show();
 
     knight.animate();
+    
    
 
     level1World.showWorldSprites();
