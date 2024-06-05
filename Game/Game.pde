@@ -27,7 +27,15 @@ World level1World;
 PImage bg1a;
 PImage bg1b;
 PImage bg1c;
-AnimatedSprite knight; //Use Sprite for a pixel-based Location
+//Declearing Sprites
+AnimatedSprite knight; 
+AnimatedSprite fightingKnightL;
+AnimatedSprite fightingKnightR;
+AnimatedSprite knightRun;
+AnimatedSprite knightHurt;
+AnimatedSprite knightHealth;
+AnimatedSprite knightDeath;
+//Use Sprite for a pixel-based Location
 //String knightFile = "sprites/knight.png";
 int knightstartX = 50;
 int knightstartY = 300;
@@ -157,7 +165,7 @@ void draw() {
 void keyPressed(){
 
   //check what key was pressed
-  System.out.println("\nKey pressed: " + key); //key gives you a character for the key pressed
+  System.out.println("\nKey pressed: " + keyCode); //key gives you a character for the key pressed
 
   //What to do when a key is pressed?
   
@@ -169,7 +177,10 @@ void keyPressed(){
       knight.setSpeed(5.0);
       knight.move(0,-5);
     }
-
+ else if(key == 'd'){
+  knight.setSpeed(5.0);
+  knight.move(0,-5);  
+}
 
 
   }
