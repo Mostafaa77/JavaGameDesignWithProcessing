@@ -119,8 +119,8 @@ bg1c.resize(width, height);
   knight = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", knightstartX, knightstartY, 0.0);
   knight.resize(128*2,64*2);
 //witch sprite
-witchRun = new AnimatedSprite("sprites/witch.png","sprites/witchrun.json",witchstartx, witchstartY, 0.0 );
-  witchRun.resize(31*2,45*2);
+witchStanding = new AnimatedSprite("sprites/witch.png","sprites/witchStanding.json",witchstartx, witchstartY, 0.0 );
+  witchStanding.resize(31*2,45*2);
   witch = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", witchstartX, witchstartY, 0.0);
   witch.resize(128*2,64*2);
 
@@ -205,11 +205,9 @@ else if(key=='s'){
 knight.setSpeed(5.0);
 knight.move(0,5);
 
-<<<<<<< HEAD
+
 }
-=======
 // }
->>>>>>> 8a63e8367d92588f81d0f29a9dc138f203c2826f
 // else if(key == null){
 //   Knight.animate();
 // }
