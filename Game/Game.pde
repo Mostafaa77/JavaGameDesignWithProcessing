@@ -301,6 +301,7 @@ public void updateScreen(){
     //level1World.show();
 
     knight.animate();
+    witch.animate();
    
 
     level1World.showWorldSprites();
