@@ -205,11 +205,10 @@ else if(key=='s'){
 knight.setSpeed(5.0);
 knight.move(0,5);
 
-<<<<<<< HEAD
+
 }
-=======
+
 // }
->>>>>>> 8a63e8367d92588f81d0f29a9dc138f203c2826f
 // else if(key == null){
 //   Knight.animate();
 // }
