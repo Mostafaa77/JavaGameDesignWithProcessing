@@ -28,6 +28,7 @@ PImage bg1a;
 PImage bg1b;
 PImage bg1c;
 //Declearing Sprites
+//kingith
 AnimatedSprite knight; 
 AnimatedSprite fightingKnightL;
 AnimatedSprite fightingKnightR;
@@ -35,6 +36,9 @@ AnimatedSprite knightRun;
 AnimatedSprite knightHurt;
 AnimatedSprite knightHealth;
 AnimatedSprite knightDeath;
+//witch
+AnimatedSprite witch;
+
 //Use Sprite for a pixel-based Location
 //String knightFile = "sprites/knight.png";
 int knightstartX = 50;
@@ -108,11 +112,17 @@ void setup() {
 bg1b.resize(width, height);
 bg1c.resize(width, height);
 //starting 
+
+//knight Sprite
   knightRun = new AnimatedSprite("sprites/knight.png","sprites/knightRun.json",knightstartX, knightstartY, 0.0 );
   knightRun.resize(31*2,45*2);
   knight = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", knightstartX, knightstartY, 0.0);
   knight.resize(128*2,64*2);
-
+//witch sprite
+witchRun = new AnimatedSprite("sprites/witch.png","sprites/witchrun.json",witchstartx, witchstartY, 0.0 );
+  witchRun.resize(31*2,45*2);
+  witch = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", witchstartX, witchstartY, 0.0);
+  witch.resize(128*2,64*2);
 
   //level1World.addSpriteCopyTo(runningHorse, 100, 200);  //example Sprite added to a World at a location, with a speed
   level1World.printWorldSprites();
@@ -197,9 +207,9 @@ knight.setSpeed(5.0);
 knight.move(0,5);
 
 }
-else if(key == null){
-  Knight.animate();
-}
+// else if(key == null){
+//   Knight.animate();
+// }
 
   }
 
@@ -286,7 +296,7 @@ public void updateScreen(){
     //level1World.moveBgXY(-3.0, 0);
     //level1World.show();
 
-    //knight.show();
+    knight.animate();
    
 
     level1World.showWorldSprites();
