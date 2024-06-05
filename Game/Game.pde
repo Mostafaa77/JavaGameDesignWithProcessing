@@ -187,26 +187,29 @@ void keyPressed(){
 
     //set [W] key to move the knight2 up & avoid Out-of-Bounds errors
     if(key == 'w'){
-       knight.animate();
+     
       knight.setSpeed(5.0);
       knight.move(0,-5);
     }
  else if(key == 'd'){
-knightRun.animate();
+
   knight.setSpeed(5.0);
   knight.move(5,0);  
 }
 else if(key=='a'){
-knightRun.animate();
+
 knight.setSpeed(5.0);
 knight.move(-5,0);
 }
 else if(key=='s'){
- knight.animate();
 knight.setSpeed(5.0);
 knight.move(0,5);
 
+<<<<<<< HEAD
 }
+=======
+// }
+>>>>>>> 8a63e8367d92588f81d0f29a9dc138f203c2826f
 // else if(key == null){
 //   Knight.animate();
 // }
