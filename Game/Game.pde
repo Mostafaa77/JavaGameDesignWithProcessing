@@ -108,9 +108,10 @@ void setup() {
 bg1b.resize(width, height);
 bg1c.resize(width, height);
 //starting 
-// knightDeath = new AnimatedSprite("sprites/knightDeath.png", "sprite/knightDeath.json", knightstartX, knightstartY,0.0);
-  knight = new AnimatedSprite("sprites/knightRun.png", "sprites/knightRun.json", knightstartX, knightstartY, 0.0);
-  knight.resize(31*3,45*3);
+  knightRun = new AnimatedSprite("sprites/knight.png","sprites/knightRun.json",knightstartX, knightstartY, 0.0 );
+  knightRun.resize(31*2,45*2);
+  knight = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", knightstartX, knightstartY, 0.0);
+  knight.resize(128*2,64*2);
 
 
   //level1World.addSpriteCopyTo(runningHorse, 100, 200);  //example Sprite added to a World at a location, with a speed
@@ -176,20 +177,25 @@ void keyPressed(){
 
     //set [W] key to move the knight2 up & avoid Out-of-Bounds errors
     if(key == 'w'){
+       knight.animate();
       knight.setSpeed(5.0);
       knight.move(0,-5);
     }
  else if(key == 'd'){
+knightRun.animate();
   knight.setSpeed(5.0);
   knight.move(5,0);  
 }
 else if(key=='a'){
+knightRun.animate();
 knight.setSpeed(5.0);
 knight.move(-5,0);
 }
 else if(key=='s'){
+ knight.animate();
 knight.setSpeed(5.0);
 knight.move(0,5);
+
 }
 else if(key == null){
   Knight.animate();
@@ -281,7 +287,7 @@ public void updateScreen(){
     //level1World.show();
 
     //knight.show();
-    knight.animate();
+   
 
     level1World.showWorldSprites();
 
