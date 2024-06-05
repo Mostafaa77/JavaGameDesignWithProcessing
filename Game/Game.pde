@@ -121,7 +121,7 @@ bg1c.resize(width, height);
   knight.resize(128*2,64*2);
 //witch sprite
 witch = new AnimatedSprite("sprites/witch.png","sprites/witch.json",witchstartX, witchstartY, 0.0 );
-  // witchStanding.resize(31*2,45*2);
+  witch.resize(19*2,39*2);
   // witch = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", witchstartX, witchstartY, 0.0);
   // witch.resize(128*2,64*2);
 
