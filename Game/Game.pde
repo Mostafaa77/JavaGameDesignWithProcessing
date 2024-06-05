@@ -207,7 +207,9 @@ knight.setSpeed(5.0);
 knight.move(0,5);
 
 
+
 }
+
 // }
 // else if(key == null){
 //   Knight.animate();
