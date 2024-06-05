@@ -107,6 +107,8 @@ void setup() {
   bg1c= loadImage("images/woods/background/woods_Background3.png");
 bg1b.resize(width, height);
 bg1c.resize(width, height);
+//starting 
+// knightDeath = new AnimatedSprite("sprites/knightDeath.png", "sprite/knightDeath.json", knightstartX, knightstartY,0.0);
   knight = new AnimatedSprite("sprites/knightRun.png", "sprites/knightRun.json", knightstartX, knightstartY, 0.0);
   knight.resize(31*3,45*3);
 
@@ -179,7 +181,15 @@ void keyPressed(){
     }
  else if(key == 'd'){
   knight.setSpeed(5.0);
-  knight.move(0,-5);  
+  knight.move(5,0);  
+}
+else if(key=='a'){
+knight.setSpeed(5.0);
+knight.move(-5,0);
+}
+else if(key=='s'){
+knight.setSpeed(5.0);
+knight.move(0,5);
 }
 
 
