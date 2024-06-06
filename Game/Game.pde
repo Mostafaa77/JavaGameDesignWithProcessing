@@ -291,9 +291,8 @@ public void updateScreen(){
     currentGrid = null;
 
     
-    if(msElapsed%600==0){
+   
       image(bg1b, 0,0);
-    }
     image(bg1c, 0,0);
 
     
