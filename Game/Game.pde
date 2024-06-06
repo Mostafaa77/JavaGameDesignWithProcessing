@@ -27,6 +27,11 @@ World level1World;
 PImage bg1a;
 PImage bg1b;
 PImage bg1c;
+PImage f1a;
+PImage f1b;
+PImage f1c;
+PImage f1d;
+PImage f1e;
 //Declearing Sprites
 //kingith
 AnimatedSprite knight; 
@@ -42,7 +47,7 @@ AnimatedSprite witch;
 //Use Sprite for a pixel-based Location
 //String knightFile = "sprites/knight.png";
 int knightstartX = 50;
-int knightstartY = 300;
+int knightstartY = 430;
 int witchstartX = 200;
 int witchstartY = 300;
 
@@ -99,7 +104,7 @@ void setup() {
   //SETUP: Screens, Worlds, Grids
   splashScreen = new Screen("splash", splashBg);
   level1World = new World("woods", bg1a);
-  level2Grid = new Grid("basement", level2Bg, 6, 8);
+  // level2Grid = new Grid("basement", level2Bg, 6, 8);
   //level2Grid.startPrintingGridMarks();
   endScreen = new World("end", endBg);
   currentScreen = splashScreen;
@@ -112,7 +117,9 @@ void setup() {
   bg1c= loadImage("images/woods/background/woods_Background3.png");
 bg1b.resize(width, height);
 bg1c.resize(width, height);
-//starting 
+//flooring
+f1a = loadImage("images/woods/background/flooring1.png");
+f1a.resize(1000,height);
 
 //knight Sprite
   knightRun = new AnimatedSprite("sprites/knight.png","sprites/knightRun.json",knightstartX, knightstartY, 0.0 );
@@ -163,7 +170,7 @@ void draw() {
     moveSprites();
   }
   msElapsed +=100;
-  currentScreen.pause(100);
+  currentScreen.pause(10);
 
   //check for end of game
   if(isGameOver()){
@@ -210,10 +217,6 @@ knight.move(0,5);
 
 }
 
-// }
-// else if(key == null){
-//   Knight.animate();
-// }
 
   }
 
@@ -268,9 +271,7 @@ public void updateTitleBar(){
 
 //method to update what is drawn on the screen each frame
 public void updateScreen(){
-// background(bg1);
-// background(bg2);
-// background(bg3);
+
 
   //UPDATE: Background of the current Screen
   if(currentScreen.getBg() != null){
@@ -294,8 +295,9 @@ public void updateScreen(){
    
       image(bg1b, 0,0);
     image(bg1c, 0,0);
-
+image(f1a, -10, 550);
     
+
     //level1World.moveBgXY(-3.0, 0);
     //level1World.show();
 
