@@ -24,14 +24,25 @@ String splashBgFile = "images/apcsa.png";
 
 //VARIABLES: level1World Pixel-based Screen
 World level1World;
+//background for woods
 PImage bg1a;
 PImage bg1b;
 PImage bg1c;
+//flooring background
 PImage f1a;
 PImage f1b;
 PImage f1c;
 PImage f1d;
 PImage f1e;
+PImage f1f;
+PImage f1g;
+PImage f1h;
+PImage f1i;
+PImage f1j;
+PImage f1k;
+PImage f1l;
+PImage f1m;
+PImage f1n;
 //Declearing Sprites
 //kingith
 AnimatedSprite knight; 
@@ -48,8 +59,11 @@ AnimatedSprite witch;
 //String knightFile = "sprites/knight.png";
 int knightstartX = 50;
 int knightstartY = 430;
+// witchstarting point
 int witchstartX = 200;
 int witchstartY = 300;
+//floorstarting point
+int floorstartY= 550;
 
 //VARIABLES: level2Grid Screen
 Grid level2Grid;
@@ -117,9 +131,21 @@ void setup() {
   bg1c= loadImage("images/woods/background/woods_Background3.png");
 bg1b.resize(width, height);
 bg1c.resize(width, height);
-//flooring
+//flooring setup
 f1a = loadImage("images/floor/flooring1.png");
 f1a.resize(100*3,100*3);
+
+f1b = loadImage("images/floor/flooring2.png");
+f1b.resize(100*2,100);
+
+f1c = loadImage("images/floor/flooring3.png");
+f1c.resize(100*3,100*3);
+
+f1d = loadImage("images/floor/flooring6.png");
+f1d.resize(100*3,100*3);
+
+f1e = loadImage("images/floor/flooring7.png");
+f1e.resize(100*3,100*3);
 
 //knight Sprite
   knightRun = new AnimatedSprite("sprites/knight.png","sprites/knightRun.json",knightstartX, knightstartY, 0.0 );
@@ -292,11 +318,15 @@ public void updateScreen(){
     currentGrid = null;
 
     
-   
+   //background
       image(bg1b, 0,0);
     image(bg1c, 0,0);
-image(f1a, -10, 550);
-    
+    //flooring
+  image(f1a, -10, 550);
+  image(f1b, 249, floorstartY);
+  // image(f1c, 40, floorstartY);
+  // image(f1d, 60, floorstartY);
+  // image(f1e, 80, floorstartY);
 
     //level1World.moveBgXY(-3.0, 0);
     //level1World.show();
