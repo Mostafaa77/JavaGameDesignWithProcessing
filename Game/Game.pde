@@ -48,8 +48,8 @@ AnimatedSprite witch;
 //String knightFile = "sprites/knight.png";
 int knightstartX = 50;
 int knightstartY = 430;
-int witchstartX = 200;
-int witchstartY = 300;
+int witchstartX = 300;
+int witchstartY = 500;
 
 //VARIABLES: level2Grid Screen
 Grid level2Grid;
@@ -127,7 +127,7 @@ f1a.resize(1000,height);
   knight = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", knightstartX, knightstartY, 0.0);
   knight.resize(128*2,64*2);
 //witch sprite
-witch = new AnimatedSprite("sprites/witch.png","sprites/witch.json",witchstartX, witchstartY, 0.0 );
+  witch = new AnimatedSprite("sprites/witch.png","sprites/witch.json",witchstartX, witchstartY, 0.0 );
   witch.resize(19*2,39*2);
   // witch = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", witchstartX, witchstartY, 0.0);
   // witch.resize(128*2,64*2);
