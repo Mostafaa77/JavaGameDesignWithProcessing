@@ -59,8 +59,8 @@ AnimatedSprite witch;
 //String knightFile = "sprites/knight.png";
 int knightstartX = 50;
 int knightstartY = 430;
-int witchstartX = 200;
-int witchstartY = 300;
+int witchstartX = 600;
+int witchstartY = 480;
 
 //VARIABLES: level2Grid Screen
 Grid level2Grid;
