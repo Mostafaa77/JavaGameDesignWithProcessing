@@ -320,7 +320,7 @@ public void updateScreen(){
     image(bg1c, 0,0);
     //flooring
   image(f1a, -10, 550);
-image(f1e, 250, 529);
+image(f1e, 248, 525);
 image(f1a, 400, 550);
     //level1World.moveBgXY(-3.0, 0);
     //level1World.show();
