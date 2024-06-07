@@ -118,8 +118,8 @@ void setup() {
 bg1b.resize(width, height);
 bg1c.resize(width, height);
 //flooring
-f1a = loadImage("images/woods/background/flooring1.png");
-f1a.resize(1000,height);
+f1a = loadImage("images/floor/flooring1.png");
+f1a.resize(100*3,100*3);
 
 //knight Sprite
   knightRun = new AnimatedSprite("sprites/knight.png","sprites/knightRun.json",knightstartX, knightstartY, 0.0 );
