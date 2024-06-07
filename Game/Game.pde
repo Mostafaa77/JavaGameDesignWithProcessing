@@ -145,7 +145,7 @@ f1d = loadImage("images/floor/flooring6.png");
 f1d.resize(100*3,100*3);
 
 f1e = loadImage("images/floor/flooring7.png");
-f1e.resize(100*3,100*3);
+f1e.resize(100*3,100);
 
 //knight Sprite
   knightRun = new AnimatedSprite("sprites/knight.png","sprites/knightRun.json",knightstartX, knightstartY, 0.0 );
@@ -323,14 +323,11 @@ public void updateScreen(){
     image(bg1c, 0,0);
     //flooring
   image(f1a, -10, 550);
-  image(f1b, 249, floorstartY);
-  // image(f1c, 40, floorstartY);
-  // image(f1d, 60, floorstartY);
-  // image(f1e, 80, floorstartY);
-
+image(f1e, 250, 529);
+image(f1a, 400, 550);
     //level1World.moveBgXY(-3.0, 0);
     //level1World.show();
-
+//sprites
     knight.animate();
     witch.animate();
    
