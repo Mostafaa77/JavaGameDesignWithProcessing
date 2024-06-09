@@ -62,6 +62,7 @@ int knightstartX = 50;
 int knightstartY = 430;
 int witchstartX = 600;
 int witchstartY = 480;
+int floorStartY = 550;
 
 //VARIABLES: level2Grid Screen
 Grid level2Grid;
@@ -236,7 +237,7 @@ knight.move(-5,0);
 else if(key=='s'){
 knight.setSpeed(5.0);
 knight.move(0,5);
-knight.checkCollision();
+knight.checkCollision(knightstartY, floorStartY);
 }
 // while(key =='w' && key=='d'){
 
@@ -432,17 +433,16 @@ public void moveSprites(){
 }
 
 //Method to check if there is a collision between Sprites on the Screen
-public boolean checkCollision(GridLocation loc, GridLocation nextLoc){
+public boolean checkCollision(knightstartY,floorStartY){
 
   //Check what image/sprite is stored in the CURRENT location
-  PImage image = grid.getTileImage(loc);
-  AnimatedSprite sprite = grid.getTileSprite(loc);
-int a =knight.getBottom();
+//   PImage image = grid.getTileImage(loc);
+//   AnimatedSprite sprite = grid.getTileSprite(loc);
+// int a =knight.getBottom();
   //if empty --> no collision
-// if(a != loc);{
-//   System.out.println("nothing is being collied with");
-
-// }
+if (knightstartY >floorStartY){
+System.out.println("Collision detedeted");
+}
 
   //Check what image/sprite is stored in the NEXT location
 
@@ -455,10 +455,8 @@ int a =knight.getBottom();
     //Update status variable
 
   //check if a player collides into enemy
-// else if (a == loc){
-//   System.out.println("collision deteted");
-// }
-  return false; //<--default return
+
+  // return false; //<--default return
 }
 
 //method to indicate when the main game is over
