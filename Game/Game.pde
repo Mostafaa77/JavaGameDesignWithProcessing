@@ -6,8 +6,10 @@
 
 //import processing.sound.*;
 
-
 //------------------ GAME VARIABLES --------------------//
+//importing buttons 
+import javax.swing.*;
+import java.awt.event.*
 
 //VARIABLES: Title Bar
 String titleText = "Final Destiny";
@@ -62,7 +64,6 @@ int knightstartX = 50;
 int knightstartY = 430;
 int witchstartX = 600;
 int witchstartY = 480;
-int floorStartY = 550;
 
 //VARIABLES: level2Grid Screen
 Grid level2Grid;
@@ -216,6 +217,9 @@ void keyPressed(){
   //What to do when a key is pressed?
   
   //KEYS FOR LEVEL1
+  //buttons for powers
+  public class c
+
   if(currentScreen == level1World){
 
     //set [W] key to move the knight2 up & avoid Out-of-Bounds errors
@@ -237,21 +241,10 @@ knight.move(-5,0);
 else if(key=='s'){
 knight.setSpeed(5.0);
 knight.move(0,5);
-knight.checkCollision(knightstartY, floorStartY);
+
+
+
 }
-// while(key =='w' && key=='d'){
-
-//   knight.setSpeed(5.0);
-//   knight.move(20,-5);
-// }
-// while (key == 'w' && key == 'a'){
-//   knight.setSpeed(5.0);
-//   knight.move(-20,-5);
-// }
-
-
-
-
 
 
   }
@@ -260,8 +253,7 @@ knight.checkCollision(knightstartY, floorStartY);
   //change to level1 if 1 key pressed, level2 if 2 key is pressed
   if(key == '1'){
     currentScreen = level2Grid;
-  } 
-  else if(key == '2'){
+  } else if(key == '2'){
     currentScreen = level1World;
   }
 
@@ -334,10 +326,8 @@ public void updateScreen(){
     image(bg1c, 0,0);
     //flooring
   image(f1a, -10, 550);
-image(f1a, 248, 550);
+image(f1e, 248, 525);
 image(f1a, 400, 550);
-image(f1a, 500, 550);
-image(f1a, 600, 550);
     //level1World.moveBgXY(-3.0, 0);
     //level1World.show();
 //sprites
@@ -433,16 +423,13 @@ public void moveSprites(){
 }
 
 //Method to check if there is a collision between Sprites on the Screen
-public boolean checkCollision(knightstartY,floorStartY){
+public boolean checkCollision(GridLocation loc, GridLocation nextLoc){
 
   //Check what image/sprite is stored in the CURRENT location
-//   PImage image = grid.getTileImage(loc);
-//   AnimatedSprite sprite = grid.getTileSprite(loc);
-// int a =knight.getBottom();
+  // PImage image = grid.getTileImage(loc);
+  // AnimatedSprite sprite = grid.getTileSprite(loc);
+
   //if empty --> no collision
-if (knightstartY >floorStartY){
-System.out.println("Collision detedeted");
-}
 
   //Check what image/sprite is stored in the NEXT location
 
@@ -456,7 +443,7 @@ System.out.println("Collision detedeted");
 
   //check if a player collides into enemy
 
-  // return false; //<--default return
+  return false; //<--default return
 }
 
 //method to indicate when the main game is over
