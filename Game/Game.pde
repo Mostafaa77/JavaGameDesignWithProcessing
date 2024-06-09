@@ -8,8 +8,7 @@
 
 //------------------ GAME VARIABLES --------------------//
 //importing buttons 
-import javax.swing.*;
-import java.awt.event.*
+
 
 //VARIABLES: Title Bar
 String titleText = "Final Destiny";
