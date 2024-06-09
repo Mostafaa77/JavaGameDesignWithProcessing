@@ -236,10 +236,21 @@ knight.move(-5,0);
 else if(key=='s'){
 knight.setSpeed(5.0);
 knight.move(0,5);
-
-
-
+knight.checkCollision();
 }
+// while(key =='w' && key=='d'){
+
+//   knight.setSpeed(5.0);
+//   knight.move(20,-5);
+// }
+// while (key == 'w' && key == 'a'){
+//   knight.setSpeed(5.0);
+//   knight.move(-20,-5);
+// }
+
+
+
+
 
 
   }
@@ -248,7 +259,8 @@ knight.move(0,5);
   //change to level1 if 1 key pressed, level2 if 2 key is pressed
   if(key == '1'){
     currentScreen = level2Grid;
-  } else if(key == '2'){
+  } 
+  else if(key == '2'){
     currentScreen = level1World;
   }
 
@@ -423,10 +435,14 @@ public void moveSprites(){
 public boolean checkCollision(GridLocation loc, GridLocation nextLoc){
 
   //Check what image/sprite is stored in the CURRENT location
-  // PImage image = grid.getTileImage(loc);
-  // AnimatedSprite sprite = grid.getTileSprite(loc);
-
+  PImage image = grid.getTileImage(loc);
+  AnimatedSprite sprite = grid.getTileSprite(loc);
+int a =knight.getBottom();
   //if empty --> no collision
+// if(a != loc);{
+//   System.out.println("nothing is being collied with");
+
+// }
 
   //Check what image/sprite is stored in the NEXT location
 
@@ -439,7 +455,9 @@ public boolean checkCollision(GridLocation loc, GridLocation nextLoc){
     //Update status variable
 
   //check if a player collides into enemy
-
+// else if (a == loc){
+//   System.out.println("collision deteted");
+// }
   return false; //<--default return
 }
 
