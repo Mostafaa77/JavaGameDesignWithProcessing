@@ -4,12 +4,10 @@
  * Modified for AnimatedSprites
  */
 
-//import processing.sound.*;
+// import processing.sound.*;
 
 //------------------ GAME VARIABLES --------------------//
 //importing buttons 
-import javax.swing.*;
-import java.awt.event.*
 
 //VARIABLES: Title Bar
 String titleText = "Final Destiny";
@@ -241,7 +239,7 @@ void keyPressed(){
       knight.move(0,5);
     }
 
-    checkCollision(knightstartY, floorStartY);
+    // checkCollision(knightstartY, floorStartY);
     // if(key =='w' && key=='d'){
     //   knight.setSpeed(5.0);
     //   knight.move(20,-5);
@@ -451,7 +449,7 @@ if (knightstartY >floorStartY){
 
   //check if a player collides into enemy
 
-  return false; //<--default return
+  // return false; //<--default return
   return false; //<--default return
 }
 
