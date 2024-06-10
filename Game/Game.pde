@@ -243,18 +243,17 @@ void keyPressed(){
 if (!(knightstartY<floorStartY)){
       knight.setSpeed(5.0);
       knight.move(0,5);
-    }
-     if(key == 'u'){
+    } 
+  
+  }
+    if(key == 'u'){
     knight.setSpeed(20.0);
     knight.move(60,0);}
     else if( key == 'a' && key == 'u'){
     knight.setSpeed(20.0);
     knight.move(-60,0);
     }
-     
-
   }
-
   //CHANGING SCREENS BASED ON KEYS
   //change to level1 if 1 key pressed, level2 if 2 key is pressed
   if(key == '1'){
