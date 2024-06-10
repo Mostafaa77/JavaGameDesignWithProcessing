@@ -216,8 +216,6 @@ void keyPressed(){
   //What to do when a key is pressed?
   
   //KEYS FOR LEVEL1
-  //buttons for powers
-  // public class c
 
   if(currentScreen == level1World){
 
@@ -231,16 +229,25 @@ void keyPressed(){
       knight.setSpeed(5.0);
       knight.move(5,0);  
     
+    
     }
     else if(key=='a'){
       knight.setSpeed(5.0);
       knight.move(-5,0);
     }
     else if(key=='s'){
+if (!(knightstartY<floorStartY)){
       knight.setSpeed(5.0);
       knight.move(0,5);
+}
+    //  if(!(knightstartY == floorStartY)){
+    //     knight.setSpeed(5.0);
+    //     knight.move(0,5);
+    //   }
+
+
     }
-checkCollision(knightstartY, floorStartY);
+
 
   }
 
