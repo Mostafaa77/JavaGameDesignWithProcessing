@@ -6,7 +6,6 @@
 
 //import processing.sound.*;
 
-
 //------------------ GAME VARIABLES --------------------//
 
 //VARIABLES: Title Bar
@@ -216,6 +215,9 @@ void keyPressed(){
   //What to do when a key is pressed?
   
   //KEYS FOR LEVEL1
+  //buttons for powers
+  // public class c
+
   if(currentScreen == level1World){
 
     //set [W] key to move the knight2 up & avoid Out-of-Bounds errors
@@ -224,45 +226,37 @@ void keyPressed(){
       knight.setSpeed(5.0);
       knight.move(0,-5);
     }
- else if(key == 'd'){
+    else if(key == 'd'){
+      knight.setSpeed(5.0);
+      knight.move(5,0);  
+    }
+    else if(key=='a'){
+      knight.setSpeed(5.0);
+      knight.move(-5,0);
+    }
+    else if(key=='s'){
+      knight.setSpeed(5.0);
+      knight.move(0,5);
+    }
 
-  knight.setSpeed(5.0);
-  knight.move(5,0);  
-}
-else if(key=='a'){
-
-knight.setSpeed(5.0);
-knight.move(-5,0);
-}
-else if(key=='s'){
-knight.setSpeed(5.0);
-knight.move(0,5);
-knight.checkCollision(knightstartY, floorStartY);
-}
-// while(key =='w' && key=='d'){
-
-//   knight.setSpeed(5.0);
-//   knight.move(20,-5);
-// }
-// while (key == 'w' && key == 'a'){
-//   knight.setSpeed(5.0);
-//   knight.move(-20,-5);
-// }
-
-
-
-
-
+    checkCollision(knightstartY, floorStartY);
+    // if(key =='w' && key=='d'){
+    //   knight.setSpeed(5.0);
+    //   knight.move(20,-5);
+    // }
+    // if(key == 'w' && key == 'a'){
+    //   knight.setSpeed(5.0);
+    //   knight.move(-20,-5);
+    // }
 
   }
 
   //CHANGING SCREENS BASED ON KEYS
   //change to level1 if 1 key pressed, level2 if 2 key is pressed
   if(key == '1'){
-    currentScreen = level2Grid;
-  } 
-  else if(key == '2'){
     currentScreen = level1World;
+  } else if(key == '2'){
+    currentScreen = level2Grid;
   }
 
 
@@ -334,10 +328,10 @@ public void updateScreen(){
     image(bg1c, 0,0);
     //flooring
   image(f1a, -10, 550);
-image(f1a, 248, 550);
-image(f1a, 400, 550);
-image(f1a, 500, 550);
-image(f1a, 600, 550);
+  image(f1a, 248, 550);
+  image(f1a, 400, 550);
+  image(f1a, 500, 550);
+  image(f1a, 600, 550);
     //level1World.moveBgXY(-3.0, 0);
     //level1World.show();
 //sprites
@@ -433,7 +427,7 @@ public void moveSprites(){
 }
 
 //Method to check if there is a collision between Sprites on the Screen
-public boolean checkCollision(knightstartY,floorStartY){
+public boolean checkCollision(int knightstartY,int floorStartY){
 
   //Check what image/sprite is stored in the CURRENT location
 //   PImage image = grid.getTileImage(loc);
@@ -441,9 +435,8 @@ public boolean checkCollision(knightstartY,floorStartY){
 // int a =knight.getBottom();
   //if empty --> no collision
 if (knightstartY >floorStartY){
-System.out.println("Collision detedeted");
+  System.out.println("Collision detedeted");
 }
-
   //Check what image/sprite is stored in the NEXT location
 
   //if empty --> no collision
@@ -456,7 +449,7 @@ System.out.println("Collision detedeted");
 
   //check if a player collides into enemy
 
-  // return false; //<--default return
+  return false; //<--default return
 }
 
 //method to indicate when the main game is over
