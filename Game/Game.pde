@@ -7,6 +7,9 @@
 //import processing.sound.*;
 
 //------------------ GAME VARIABLES --------------------//
+//importing buttons 
+import javax.swing.*;
+import java.awt.event.*
 
 //VARIABLES: Title Bar
 String titleText = "Final Destiny";
@@ -61,7 +64,6 @@ int knightstartX = 50;
 int knightstartY = 430;
 int witchstartX = 600;
 int witchstartY = 480;
-int floorStartY = 550;
 
 //VARIABLES: level2Grid Screen
 Grid level2Grid;
@@ -430,9 +432,9 @@ public void moveSprites(){
 public boolean checkCollision(int knightstartY,int floorStartY){
 
   //Check what image/sprite is stored in the CURRENT location
-//   PImage image = grid.getTileImage(loc);
-//   AnimatedSprite sprite = grid.getTileSprite(loc);
-// int a =knight.getBottom();
+  // PImage image = grid.getTileImage(loc);
+  // AnimatedSprite sprite = grid.getTileSprite(loc);
+
   //if empty --> no collision
 if (knightstartY >floorStartY){
   System.out.println("Collision detedeted");
@@ -449,6 +451,7 @@ if (knightstartY >floorStartY){
 
   //check if a player collides into enemy
 
+  return false; //<--default return
   return false; //<--default return
 }
 
