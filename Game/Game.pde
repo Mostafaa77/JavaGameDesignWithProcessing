@@ -53,8 +53,10 @@ AnimatedSprite knightRun;
 AnimatedSprite knightHurt;
 AnimatedSprite knightHealth;
 AnimatedSprite knightDeath;
+AnimatedSprite knightRoll;
 //witch
 AnimatedSprite witch;
+ 
 
 //Use Sprite for a pixel-based Location
 //String knightFile = "sprites/knight.png";
@@ -149,6 +151,8 @@ f1e.resize(100*3,100);
 //knight Sprite
   knightRun = new AnimatedSprite("sprites/knight.png","sprites/knightRun.json",knightstartX, knightstartY, 0.0 );
   knightRun.resize(31*2,45*2);
+  knightRoll = new AnimatedSprite("sprites/knightRoll.png","sprites/knightRoll.json",knightstartX, knightstartY, 0.0 );
+  knightRoll.resize(128*2,64*2);
   knight = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", knightstartX, knightstartY, 0.0);
   knight.resize(128*2,64*2);
 //witch sprite
@@ -240,7 +244,14 @@ void keyPressed(){
       knight.setSpeed(5.0);
       knight.move(0,5);
     }
-checkCollision(knightstartY, floorStartY);
+     if(key == 'u'){
+    knight.setSpeed(20.0);
+    knight.move(60,0);}
+    else if( key == 'a' && key == 'u'){
+    knight.setSpeed(20.0);
+    knight.move(-60,0);
+    }
+     
 
   }
 
@@ -329,6 +340,7 @@ public void updateScreen(){
     //level1World.show();
 //sprites
     knight.animate();
+    // knightRoll.animate();
     witch.animate();
    
 
