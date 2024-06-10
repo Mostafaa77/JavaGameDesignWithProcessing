@@ -64,7 +64,7 @@ int knightstartX = 50;
 int knightstartY = 430;
 int witchstartX = 600;
 int witchstartY = 480;
-int floorStartY= 550;
+int floorStartY= 550-70;
 
 //VARIABLES: level2Grid Screen
 Grid level2Grid;
@@ -149,7 +149,7 @@ f1e = loadImage("images/floor/flooring7.png");
 f1e.resize(100*3,100);
 
 //knight Sprite
-  knightRun = new AnimatedSprite("sprites/knight.png","sprites/knightRun.json",knightstartX, knightstartY, 0.0 );
+  knightRun = new AnimatedSprite("sprites/knightRun.png","sprites/knightRun.json",knightstartX, knightstartY, 0.0 );
   knightRun.resize(31*2,45*2);
   knightRoll = new AnimatedSprite("sprites/knightRoll.png","sprites/knightRoll.json",knightstartX, knightstartY, 0.0 );
   knightRoll.resize(128*2,64*2);
@@ -230,29 +230,35 @@ void keyPressed(){
       knight.move(0,-5);
     }
     else if(key == 'd'){
-      knight.setSpeed(5.0);
+      knight.setSpeed(1.0);
       knight.move(5,0);  
     
     
     }
     else if(key=='a'){
-      knight.setSpeed(5.0);
+      knight.setSpeed(1.0);
       knight.move(-5,0);
     }
     else if(key=='s'){
-if (!(knightstartY<floorStartY)){
-      knight.setSpeed(5.0);
-      knight.move(0,5);
-    } 
-  
+      
+      if (knight.getBottom()<floorStartY){
+        //System.out.println("top" +knight.getTop() + ", bot" + knight.getBottom()+ floorStartY);
+            knight.setSpeed(5.0);
+            knight.move(0,5);
+          } 
+  //  else{
+  //   knight.setSpeed(5.0);
+  //   knight.move(0,5);
+  //  }
   }
+  
     if(key == 'u'){
-    knight.setSpeed(20.0);
-    knight.move(60,0);}
-    else if( key == 'a' && key == 'u'){
-    knight.setSpeed(20.0);
-    knight.move(-60,0);
-    }
+    knightRoll.setSpeed(0.9);
+    knightRoll.move(60,0);}
+    // else if( key == 'a' && key == 'u'){
+    // knight.setSpeed(20.0);
+    // knight.move(-60,0);
+    // }
   }
   //CHANGING SCREENS BASED ON KEYS
   //change to level1 if 1 key pressed, level2 if 2 key is pressed
@@ -338,7 +344,20 @@ public void updateScreen(){
     //level1World.moveBgXY(-3.0, 0);
     //level1World.show();
 //sprites
-    knight.animate();
+// if(key == 'd'){
+//   knightRun.animate();
+// }
+// if(key == 'a'){
+//   knightRun.animate();
+// }
+// if(key=='u'){
+//   knightRoll.animate();
+// }
+// else{
+//  knight.animate();
+// }
+knight.animate();
+   
     // knightRoll.animate();
     witch.animate();
    
