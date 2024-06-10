@@ -62,6 +62,7 @@ int knightstartX = 50;
 int knightstartY = 430;
 int witchstartX = 600;
 int witchstartY = 480;
+int floorStartY= 550;
 
 //VARIABLES: level2Grid Screen
 Grid level2Grid;
@@ -229,6 +230,7 @@ void keyPressed(){
     else if(key == 'd'){
       knight.setSpeed(5.0);
       knight.move(5,0);  
+    
     }
     else if(key=='a'){
       knight.setSpeed(5.0);
@@ -238,16 +240,7 @@ void keyPressed(){
       knight.setSpeed(5.0);
       knight.move(0,5);
     }
-
-    // checkCollision(knightstartY, floorStartY);
-    // if(key =='w' && key=='d'){
-    //   knight.setSpeed(5.0);
-    //   knight.move(20,-5);
-    // }
-    // if(key == 'w' && key == 'a'){
-    //   knight.setSpeed(5.0);
-    //   knight.move(-20,-5);
-    // }
+checkCollision(knightstartY, floorStartY);
 
   }
 
@@ -432,15 +425,17 @@ public boolean checkCollision(int knightstartY,int floorStartY){
   //Check what image/sprite is stored in the CURRENT location
   // PImage image = grid.getTileImage(loc);
   // AnimatedSprite sprite = grid.getTileSprite(loc);
-
+boolean a =false;
   //if empty --> no collision
 if (knightstartY >floorStartY){
-  System.out.println("Collision detedeted");
+ a= true;
 }
   //Check what image/sprite is stored in the NEXT location
-
+else{
+a=false;
+}
   //if empty --> no collision
-
+return a;
   //check if enemy runs into player
 
     //clear out the enemy if it hits the player (using cleartTileImage() or clearTileSprite() from Grid class)
@@ -450,7 +445,7 @@ if (knightstartY >floorStartY){
   //check if a player collides into enemy
 
   // return false; //<--default return
-  return false; //<--default return
+   //<--default return
 }
 
 //method to indicate when the main game is over
