@@ -10,8 +10,8 @@
 //importing buttons 
 
 //VARIABLES: Title Bar
-String titleText = "Final Destiny";
-String extraText = "The Last Saga?";
+String titleText = "Final Destiny:";
+String extraText = "The Last Saga";
 
 //VARIABLES: Whole Game
 AnimatedSprite runningHorse;
