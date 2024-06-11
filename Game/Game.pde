@@ -46,7 +46,8 @@ PImage f1m;
 PImage f1n;
 //Declearing Sprites
 //kingith
-AnimatedSprite knight; 
+AnimatedSprite knight;
+AnimatedSprite knightStand;
 AnimatedSprite fightingKnightL;
 AnimatedSprite fightingKnightR;
 AnimatedSprite knightRun;
@@ -128,33 +129,36 @@ void setup() {
   // runningHorse = new AnimatedSprite("sprites/horse_run.png", "sprites/horse_run.json", 50.0, 75.0, 10.0);
 
   //SETUP: Level 1
-    bg1b = loadImage("images/woods/background/woods_Background2.png");
+  bg1b = loadImage("images/woods/background/woods_Background2.png");
   bg1c= loadImage("images/woods/background/woods_Background3.png");
-bg1b.resize(width, height);
-bg1c.resize(width, height);
-//flooring setup
-f1a = loadImage("images/floor/flooring1.png");
-f1a.resize(100*3,100*3);
+  bg1b.resize(width, height);
+  bg1c.resize(width, height);
+  //flooring setup
+  f1a = loadImage("images/floor/flooring1.png");
+  f1a.resize(100*3,100*3);
 
-f1b = loadImage("images/floor/flooring2.png");
-f1b.resize(100*2,100);
+  f1b = loadImage("images/floor/flooring2.png");
+  f1b.resize(100*2,100);
 
-f1c = loadImage("images/floor/flooring3.png");
-f1c.resize(100*3,100*3);
+  f1c = loadImage("images/floor/flooring3.png");
+  f1c.resize(100*3,100*3);
 
-f1d = loadImage("images/floor/flooring6.png");
-f1d.resize(100*3,100*3);
+  f1d = loadImage("images/floor/flooring6.png");
+  f1d.resize(100*3,100*3);
 
-f1e = loadImage("images/floor/flooring7.png");
-f1e.resize(100*3,100);
+  f1e = loadImage("images/floor/flooring7.png");
+  f1e.resize(100*3,100);
 
-//knight Sprite
+  //knight Sprite
   knightRun = new AnimatedSprite("sprites/knightRun.png","sprites/knightRun.json",knightstartX, knightstartY, 0.0 );
   knightRun.resize(31*2,45*2);
   knightRoll = new AnimatedSprite("sprites/knightRoll.png","sprites/knightRoll.json",knightstartX, knightstartY, 0.0 );
   knightRoll.resize(128*2,64*2);
-  knight = new AnimatedSprite("sprites/knight.png", "sprites/knight.json", knightstartX, knightstartY, 0.0);
-  knight.resize(128*2,64*2);
+  knightStand = new AnimatedSprite("sprites/knightStand.png", "sprites/knightStand.json", knightstartX, knightstartY, 0.0);
+  knightStand.resize(128*2,64*2);
+
+  knight = knightStand; //Sets default knight Sprite
+
 //witch sprite
   witch = new AnimatedSprite("sprites/witch.png","sprites/witch.json",witchstartX, witchstartY, 0.0 );
   witch.resize(19*2,39*2);
@@ -225,15 +229,12 @@ void keyPressed(){
 
     //set [W] key to move the knight2 up & avoid Out-of-Bounds errors
     if(key == 'w'){
-     
       knight.setSpeed(5.0);
       knight.move(0,-5);
     }
     else if(key == 'd'){
       knight.setSpeed(1.0);
       knight.move(5,0);  
-    
-    
     }
     else if(key=='a'){
       knight.setSpeed(1.0);
@@ -253,8 +254,11 @@ void keyPressed(){
   }
   
     if(key == 'u'){
-    knightRoll.setSpeed(0.9);
-    knightRoll.move(60,0);}
+      knight = knightRoll;
+      knight.setSpeed(0.9);
+      knight.move(60,0);
+    }
+
     // else if( key == 'a' && key == 'u'){
     // knight.setSpeed(20.0);
     // knight.move(-60,0);
