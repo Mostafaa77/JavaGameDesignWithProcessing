@@ -61,10 +61,10 @@ AnimatedSprite witch;
 //Use Sprite for a pixel-based Location
 //String knightFile = "sprites/knight.png";
 int knightstartX = 50;
-int knightstartY = 430;
+int knightstartY = 425;
 int witchstartX = 600;
 int witchstartY = 480;
-int floorStartY= 550-70;
+int floorStartY= 550-65;
 
 //VARIABLES: level2Grid Screen
 Grid level2Grid;
@@ -483,7 +483,23 @@ public boolean isGameOver(){
   
   return false; //by default, the game is never over
 }
+//trying out a mesh of verson for gravity 
+// https://www.youtube.com/watch?v=noKsDZ-UPq8 (thank you masahiro for the video)
+// also this guy https://www.youtube.com/watch?v=c4b9lCfSDQM
+// https://www.youtube.com/watch?v=H1eEiI1S6LA
+// public void gravity(){
+//   double gravity = .05;
+//      boolean jump = false;
+//       double voly= 0;
 
+//   while (key =='w'){
+// jump = true;
+// if (jump = true){
+// voly += gravity;
+// knightstartY = voly;
+// }
+//   }
+// }
 //method to describe what happens after the game is over
 public void endGame(){
     System.out.println("Game Over!");
